@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+}
+
+.intro {
+    height: 30vh;
+    background-color: #7effdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro h1 {
+    font-size: 50px;
+}
+
+.login {
+    height: 70vh;
+    background-color: #8c82fc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.card {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h2 {
+    font-size: 40px;
+    padding: 30px;
+}
+
+.card form h4,
+.card a h4 {
+    font-size: 25px;
+    color: wheat;
+}
+
+.input-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 7px;
+}
+
+button,
+a {
+    background-color: #010a43;
+    color: wheat;
+    margin: 20px 50px;
+    padding: 7px 30px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
