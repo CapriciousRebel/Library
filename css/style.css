@@ -6,6 +6,30 @@
     color: black;
 }
 
+.input-field {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 7px;
+}
+
+button,
+a {
+    background-color: #010a43;
+    color: wheat;
+    margin: 20px 50px;
+    padding: 7px 30px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+}
+
+td {
+    padding: 7px;
+    text-align: center;
+}
+
 .intro {
     height: 30vh;
     background-color: #7effdb;
@@ -45,26 +69,22 @@
     color: wheat;
 }
 
-.input-field {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    padding: 7px;
-}
-
-button,
-a {
+.highlight {
     background-color: #010a43;
     color: wheat;
     margin: 20px 50px;
     padding: 7px 30px;
     text-align: center;
     font-size: 25px;
-    cursor: pointer;
     border: none;
 }
 
 .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.library {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }

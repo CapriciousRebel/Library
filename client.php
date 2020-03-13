@@ -1,3 +1,7 @@
+<?php
+include 'connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +18,43 @@
     </div>
     <div class="main">
         <div class="card">
-            <h4>All Books</h4>
+            <span class='highlight'>Books in Library</span>
+            <div id="library">
+                <?php
+                $query = "SELECT * FROM books LIMIT 6;";
+                $books = pg_query($conn, $query);
+
+                if (pg_fetch_assoc($books) > 0) {
+
+                    echo '<table>
+                    <t>
+                    <th> No. </th>
+                    <th> Name </th>
+                    <th> Quantity </th>
+                    </t>';
+
+                    $id = 0;
+                    while ($row = pg_fetch_assoc($books)) {
+                        $id++;
+                        echo    '<tr>
+                        <td>' . $id . '</td>
+                        <td>' . $row['bookname'] . '</td>
+                        <td id= "quantity">' . $row['quantity'] . '</td>
+                      </tr>
+                     ';
+                    }
+
+                    echo ' </table>';
+                } else {
+                    echo "There are no books in the Library!";
+                }
+                ?>
+            </div>
+            <button>Show more Books</button>
         </div>
 
         <div class="card">
-            <h4>My Books(checked out)</h4>
+            <h4>My Books</h4>
         </div>
 
     </div>
