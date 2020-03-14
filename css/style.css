@@ -13,7 +13,6 @@
     padding: 7px;
 }
 
-button,
 a {
     background-color: #010a43;
     color: wheat;
@@ -22,6 +21,18 @@ a {
     text-align: center;
     font-size: 25px;
     cursor: pointer;
+    border: none;
+}
+
+button {
+    background-color: #010a43;
+    color: wheat;
+    margin: 2px 5px;
+    padding: 2px 8px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 3px;
     border: none;
 }
 
