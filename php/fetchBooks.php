@@ -11,31 +11,28 @@ if (pg_fetch_assoc($books) > 0) {
                     <t>
                     <th> No. </th>
                     <th> Name </th>
-                    <th> Quantity </th>
+                    <th> Available </th>
+                    <th> Request </th>
                     </t>';
 
     $id = 0;
     while ($row = pg_fetch_assoc($books)) {
         $id++;
-        echo        '<tr>
+
+        $bookname = $row['bookname'];
+        $quantity = $row['quantity'];
+        echo           '<tr>
                         <td>' . $id . '</td>
-                        
-                        <td>' . $row['bookname'] . '</td>
-                        
-                        <td id= "quantity">' . $row['quantity'] . '</td>
-                        
+                        <td>' . $bookname . '</td>
+                        <td>' . $quantity . '</td>
                         <td>
                         <form id = "makeRequestForm" method = "POST">
-
-                        <label for="quantity">Quantity</label>
-                        <input type="number" id="quantity" name="quantity" min="0" max="' . $row['quantity'] . '"></td>
-
-                        <input type="text" id="bookname" name="bookname" style = "visibility:hidden" value = "' . $row['bookname'] . '"></td>
-                        <td><button type="submit" class = "makeRequest"> Request </button></td>
-
+                        <input type="number" id="quantity" name="quantity" min="0" max="' . $quantity . '">
+                        <input type="text" id="bookname" name="bookname" style = "visibility:hidden;" value = "' . $bookname . '">
+                        <button type="submit" class = "makeRequest"> Request </button>
                         </form>
                         </td>
-                    </tr>';
+                        </tr>';
     }
     echo            '</table>';
 } else {
@@ -45,8 +42,6 @@ if (pg_fetch_assoc($books) > 0) {
 
 <script>
     $(document).ready(function() {
-
-
         $('.makeRequest').click(function() {
             $.ajax({
                 url: '../php/makeRequest.php',

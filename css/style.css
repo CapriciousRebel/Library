@@ -39,6 +39,11 @@ button {
 td {
     padding: 7px;
     text-align: center;
+    border: 1px solid black;
+}
+
+table {
+    border: 1px solid black;
 }
 
 .intro {

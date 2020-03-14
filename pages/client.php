@@ -1,7 +1,3 @@
-<?php
-include '../php/connection.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,27 +19,39 @@ include '../php/connection.php';
             <div id="library">
 
             </div>
-            <button id="showMore">Show Books</button>
-            <script>
-                $(document).ready(function() {
-                    var numberOfBooks = 0;
-                    $("#showMore").click(function() {
-                        $('#showMore').html("Show more Books");
-                        numberOfBooks = numberOfBooks + 5;
-                        $("#library").load('../php/fetchBooks.php', {
-                            fetchNumberOfBooks: numberOfBooks
-                        });
-                    });
-                });
-            </script>
+            <button id="showMore">Show Library Books</button>
         </div>
 
         <div class="card">
-            <h4>My Books</h4>
+            <h4 class="highlight">My Books</h4>
+            <div id="mybooks">
+
+            </div>
+            <button id="showMybooks">Show My Books</button>
         </div>
 
-    </div>
+        <script>
+            $(document).ready(function() {
+                var LibNoOfBooks = 0;
+                $("#showMore").click(function() {
+                    $('#showMore').html("Show more Books");
+                    LibNoOfBooks = LibNoOfBooks + 5;
+                    $("#library").load('../php/fetchBooks.php', {
+                        fetchNumberOfBooks: LibNoOfBooks
+                    });
+                });
 
+                var MyNoOfBooks = 0;
+                $("#showMybooks").click(function() {
+                    $('#showMybooks').html("Show more Books");
+                    MyNoOfBooks = MyNoOfBooks + 5;
+                    $("#mybooks").load('../php/showMyBooks.php', {
+                        fetchNumberOfMyBooks: MyNoOfBooks
+                    });
+                });
+            });
+        </script>
+    </div>
 </body>
 
 </html>
