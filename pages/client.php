@@ -11,19 +11,25 @@
 
 <body>
     <div class="intro">
-        <h1>Welcome , Client!</h1>
+        <div class="welcome">
+            <h1>Welcome , Client!</h1>
+        </div>
+        <div class="cart">
+            <h1>Cart</h1>
+            <div id="cart-items">
+
+            </div>
+            <input type="button" id="Checkout" name="Checkout" value="Checkout">
+
+        </div>
     </div>
     <div class="main">
-
-
-
-
         <div class="card">
             <span class='highlight'>Books in Library</span>
             <div id="library">
 
             </div>
-            <button id="showMore">Show Library Books</button>
+            <button id="showMore">Show More books</button>
         </div>
 
         <div class="card">
@@ -31,7 +37,7 @@
             <div id="mybooks">
 
             </div>
-            <button id="showMybooks">Show My Books</button>
+            <button id="showMybooks">Show More Books</button>
         </div>
         <div class="card">
             <form id="makeRequestForm" name="makeRequestForm" method="POST">
@@ -40,45 +46,19 @@
                 <input type="button" id="makeRequestButton" name="makeRequestButton" value="Request">
             </form>
         </div>
+        <script src="../js/clientSide.js"></script>
+    </div>
+
+    <div class="test">
+        <input type="text" class="testy" value="5">
+        <input type="text" class="testy" value="2">
+        <input type="text" class="testy" value="3">
+        <input type="text" class="testy" value="4">
 
         <script>
-            $(document).ready(function() {
-
-                // Fetch library books
-                var LibNoOfBooks = 0;
-
-                $("#showMore").click(function() {
-                    $('#showMore').html("Show more Books");
-                    LibNoOfBooks = LibNoOfBooks + 5;
-                    $("#library").load('../php/fetchBooks.php', {
-                        fetchNumberOfBooks: LibNoOfBooks
-                    });
+            $(".testy").each(function() {
+                    console.log($(this).val());
                 });
-
-                // Fetch My books
-                var MyNoOfBooks = 0;
-                $("#showMybooks").click(function() {
-                    $('#showMybooks').html("Show more Books");
-                    MyNoOfBooks = MyNoOfBooks + 5;
-                    $("#mybooks").load('../php/showMyBooks.php', {
-                        fetchNumberOfMyBooks: MyNoOfBooks
-                    });
-                });
-
-                // Make book request
-                $("#makeRequestButton").on('click', function() {
-                    var bookname = $("#bookname").val();
-                    var quantity = $("#quantity").val();
-                    $.ajax({
-                        url: "../php/makeRequest.php",
-                        type: "POST",
-                        data: {
-                            bookname: bookname,
-                            quantity: quantity,
-                        },
-                    });
-                });
-            });
         </script>
     </div>
 </body>

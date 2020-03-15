@@ -15,6 +15,8 @@ if ($books) {
                     </t>';
 
     $id = 0;
+
+
     while ($row = pg_fetch_assoc($books)) {
         $id++;
 
@@ -24,6 +26,12 @@ if ($books) {
                         <td>' . $id . '</td>
                         <td>' . $bookname . '</td>
                         <td>' . $quantity . '</td>
+                        <td>
+                        <div class = "makeRequestForm" action = "">
+                        <input type = "text" name = "bookname" class = "bookname" style = "display:none;" value = "' . $bookname . '">
+                        <input type = "number" name = "quantity" class = "quantity" min = "0" max = "' . $quantity . '">
+                        <input type = "submit" name = "addToCart" class = "addToCart" value = "' . $bookname . '">
+                        </div>
                         </tr>';
     }
     echo            '</table>';
@@ -34,11 +42,16 @@ if ($books) {
 
 <script>
     $(document).ready(function() {
-        $('.makeRequest').click(function() {
-            $.ajax({
-                url: '../php/makeRequest.php',
-                method: 'POST',
-                data: $("#makeRequestForm").serialize()
+
+        $(".makeRequestForm").each(function() {
+            
+            $(this).children(".addToCart").click(function() {
+
+                var bookname = $(this).siblings(".bookname").val();
+                var quantity = $(this).siblings(".quantity").val();
+
+                console.log(bookname);
+                console.log(quantity);
             });
         });
     });

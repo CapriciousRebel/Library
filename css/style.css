@@ -104,7 +104,22 @@ table {
     grid-template-columns: 1fr 1fr;
 }
 
-.library {
+.library,
+.intro {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.intro .cart {
+    grid-column: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro .welcome {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

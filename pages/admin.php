@@ -20,27 +20,15 @@ include '../php/connection.php';
     <div class="main">
 
         <div class="card">
-            <h4 class = "highlight">Checkout Requests</h4>
+            <h4 class="highlight">Checkout Requests</h4>
             <div id="checkoutRequests">
 
             </div>
-            <button class = "highlight" id="showMoreAdmin">Show More</button>
-            <script>
-                $(document).ready(function() {
-                    var numberOfRequests = 0;
-                    $("#showMoreAdmin").click(function() {
-                        $('#showMore').html("Show more Checkout Requests");
-                        numberOfRequests = numberOfRequests + 5;
-                        $("#checkoutRequests").load('../php/fetchRequests.php', {
-                            fetchNumberOfRequests: numberOfRequests
-                        });
-                    });
-                });
-            </script>
+            <button class="highlight" id="showMoreAdmin">Show More</button>
+            <script src="../js/fetchRequests.js"></script>
+
         </div>
-
     </div>
-
 </body>
 
 </html>
