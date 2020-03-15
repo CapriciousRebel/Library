@@ -6,7 +6,7 @@ $fetchNumberOfRequests = $_POST['fetchNumberOfRequests'];
 $query = "SELECT * FROM requests LIMIT $fetchNumberOfRequests;";
 $requests = pg_query($conn, $query);
 
-if (pg_fetch_assoc($requests) > 0) {
+if ($requests) {
     echo '          <table>
                     <t>
                     <th> No.</th>

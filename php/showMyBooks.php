@@ -4,7 +4,8 @@ $fetchNumberOfBooks = $_POST['fetchNumberOfMyBooks'];
 $query = "SELECT * FROM history LIMIT $fetchNumberOfBooks;";
 $mybooks = pg_query($conn, $query);
 
-if (pg_fetch_assoc($mybooks) > 0) {
+
+if ($mybooks) {
     echo '          <table>
         <t>
         <th> No. </th>
@@ -21,7 +22,7 @@ if (pg_fetch_assoc($mybooks) > 0) {
         echo       '<tr>
                     <td>' . $id . '</td>
                     <td>' . $book . '</td>
-                    <td' . $quantity . '</td>
+                    <td>' . $quantity . '</td>
                     </tr>';
     }
     echo            '</table>';

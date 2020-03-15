@@ -24,7 +24,7 @@ include '../php/connection.php';
             <div id="checkoutRequests">
 
             </div>
-            <button id="showMoreAdmin">Show More</button>
+            <button class = "highlight" id="showMoreAdmin">Show More</button>
             <script>
                 $(document).ready(function() {
                     var numberOfRequests = 0;

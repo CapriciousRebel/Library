@@ -6,13 +6,12 @@ $fetchNumberOfBooks = $_POST['fetchNumberOfBooks'];
 $query = "SELECT * FROM books LIMIT $fetchNumberOfBooks;";
 $books = pg_query($conn, $query);
 
-if (pg_fetch_assoc($books) > 0) {
+if ($books) {
     echo '          <table>
                     <t>
                     <th> No. </th>
                     <th> Name </th>
                     <th> Available </th>
-                    <th> Request </th>
                     </t>';
 
     $id = 0;
@@ -25,13 +24,6 @@ if (pg_fetch_assoc($books) > 0) {
                         <td>' . $id . '</td>
                         <td>' . $bookname . '</td>
                         <td>' . $quantity . '</td>
-                        <td>
-                        <form id = "makeRequestForm" method = "POST">
-                        <input type="number" id="quantity" name="quantity" min="0" max="' . $quantity . '">
-                        <input type="text" id="bookname" name="bookname" style = "visibility:hidden;" value = "' . $bookname . '">
-                        <button type="submit" class = "makeRequest"> Request </button>
-                        </form>
-                        </td>
                         </tr>';
     }
     echo            '</table>';

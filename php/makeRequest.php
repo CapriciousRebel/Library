@@ -1,15 +1,9 @@
 <?php
-
 include 'connection.php';
 
-extract($_POST);
+$bookname = $_POST['bookname'];
+$quantity = $_POST['quantity'];
 
-if(isset($_POST)){
+$query = "INSERT INTO requests(bookname,username,quantity) VALUES('$bookname', 'rebel', 3);";
+$result = pg_query($conn, $query);
 
-    $name = $_POST['bookname'];
-    $quantity = $_POST['quantity'];
-
-    $query = "INSERT INTO requests(bookname,username,quantity) VALUES('$name', 'rebel', $quantity);";
-    $result = pg_query($conn, $query);
-
-}
