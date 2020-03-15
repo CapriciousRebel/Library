@@ -48,19 +48,6 @@
         </div>
         <script src="../js/clientSide.js"></script>
     </div>
-
-    <div class="test">
-        <input type="text" class="testy" value="5">
-        <input type="text" class="testy" value="2">
-        <input type="text" class="testy" value="3">
-        <input type="text" class="testy" value="4">
-
-        <script>
-            $(".testy").each(function() {
-                    console.log($(this).val());
-                });
-        </script>
-    </div>
 </body>
 
 </html>
