@@ -18,16 +18,13 @@ include '../php/connection.php';
         <h1>Welcome , Admin!</h1>
     </div>
     <div class="main">
-
         <div class="card">
             <h4 class="highlight">Checkout Requests</h4>
             <div id="checkoutRequests">
 
             </div>
-            <button class="highlight" id="showMoreAdmin">Show More</button>
             <script src="../js/fetchRequests.js"></script>
         </div>
     </div>
 </body>
-
 </html>
