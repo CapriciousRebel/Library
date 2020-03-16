@@ -46,6 +46,13 @@ username VARCHAR(255),
 bookname VARCHAR(255),
 quantity INT,
 );
+
+CREATE TABLE users(
+id SERIAL,
+name VARCHAR(255),
+password VARCHAR(255),
+isAdmin INT
+);
 ```
 
 #### start a development server:
