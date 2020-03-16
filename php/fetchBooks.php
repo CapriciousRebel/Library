@@ -28,7 +28,8 @@ if ($books) {
                         <input type = "text" name = "bookname" class = "bookname" style = "display:none;" value = "' . $bookname . '">
                         <input type = "number" name = "quantity" class = "quantity" min = "0" max = "' . $quantity . '">
                         <input type = "submit" name = "addToCart" class = "addToCart" value = "Request">
-                        </div></td>
+                        </div>
+                        </td>
                         </tr>';
     }
     echo            '</table>';

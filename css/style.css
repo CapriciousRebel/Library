@@ -19,13 +19,15 @@
 .header {
     height: 30vh;
     background-color: #eb76ff;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header h1 {
     font-size: 50px;
     background-color: #eb76ff;
+    grid-column: 2;
 }
 
 button {
@@ -65,13 +67,25 @@ td {
     justify-content: center;
 }
 
-.card h2 {
+.card h2,
+.card-main h2 {
     font-size: 40px;
     padding: 30px;
 }
 
 .card form h4,
-.card a h4 {
+.card a h4,
+.card-main form h4,
+.card-main a h4 {
     font-size: 25px;
-    color: wheat;
+    color: black;
+}
+
+.card-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 70px 160px;
 }
