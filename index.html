@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library management</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -14,37 +15,37 @@
     </div>
 
     <div class="login">
-        <div class="card-main">
-            <h2>Client Login</h2>
-
-            <form action="../verifyUser.php" method="_POST">
-
-                <label for="name-client">Name</label>
-                <input type="text" id="name-client">
-
-                <label for="name-client">Password</label>
-                <input type="text" id="password-client">
-                <a class="highlight" href="pages/client.php">Submit</a>
-            </form>
-        </div>
 
         <div class="card-main">
             <h2>Admin Login</h2>
-
-            <form action="verify.php" method="POST">
+            <form action="php/verifyAdmin.php" method="POST">
                 <div class="input-field">
                     <h4>Name </h4>
-                    <input type="text" id="name-client">
+                    <input type="text" name="name-admin" id="name-admin">
                 </div>
                 <div class="input-field">
                     <h4>Password </h4>
-                    <input type="text" id="password-client">
+                    <input type="text" name="password-admin" id="password-admin">
                 </div>
-                <a class="highlight" href="pages/admin.php">Submit</a>
+                <input type="submit">
+            </form>
+        </div>
+
+        <div class="card-main">
+            <h2>Client Login</h2>
+            <form action="php/verifyClient.php" method="POST">
+                <div class="input-field">
+                    <h4>Name </h4>
+                    <input type="text" name="name-client" id="name-client">
+                </div>
+                <div class="input-field">
+                    <h4>Password </h4>
+                    <input type="text" name="password-client" id="password-client">
+                </div>
+                <input type="submit">
             </form>
         </div>
     </div>
-
 </body>
 
 </html>
