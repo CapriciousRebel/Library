@@ -1,7 +1,7 @@
 <?php include 'connection.php';
 
 $fetchNumberOfBooks = $_POST['fetchNumberOfMyBooks'];
-$query = "SELECT * FROM history LIMIT $fetchNumberOfBooks;";
+$query = "SELECT * FROM records LIMIT $fetchNumberOfBooks;";
 $mybooks = pg_query($conn, $query);
 
 
@@ -14,7 +14,7 @@ if ($mybooks) {
     $id = 0;
     while ($row = pg_fetch_assoc($mybooks)) {
         $id++;
-        $book = $row['book'];
+        $book = $row['bookname'];
         $quantity = $row['quantity'];
 
         echo       '<tr>
