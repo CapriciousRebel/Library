@@ -1,1 +1,26 @@
 @import "style.css";
+.welcome {
+    background-color: #eb76ff;
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myrequests {
+    background-color: #eb76ff;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    margin: 20px;
+}
+
+.main {
+    display: grid;
+    grid-template: 1fr/1fr 1fr 1fr;
+}

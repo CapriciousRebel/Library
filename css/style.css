@@ -4,61 +4,49 @@
     padding: 0;
     text-decoration: none;
     color: black;
+    background-color: #ffe3ed;
 }
 
-.input-field {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    padding: 7px;
-}
-
-a {
+.highlight {
     background-color: #010a43;
-    color: wheat;
-    margin: 20px 50px;
+    color: gold;
     padding: 7px 30px;
     text-align: center;
     font-size: 25px;
-    cursor: pointer;
     border: none;
 }
 
+.header {
+    height: 30vh;
+    background-color: #eb76ff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
-/*
+.header h1 {
+    font-size: 50px;
+    background-color: #eb76ff;
+}
+
 button {
-    background-color: #010a43;
-    color: wheat;
-    margin: 2px 5px;
-    padding: 2px 8px;
-    text-align: center;
-    font-size: 15px;
     cursor: pointer;
-    border-radius: 3px;
-    border: none;
 }
-*/
 
-td {
-    padding: 7px;
-    text-align: center;
-    border: 1px solid black;
+a {
+    cursor: pointer;
 }
 
 table {
-    border: 1px solid black;
+    background-color: #fbffb1;
 }
 
-.intro {
-    height: 30vh;
-    background-color: #7effdb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.intro h1 {
-    font-size: 50px;
+t,
+th,
+td {
+    color: black;
+    padding: 7px;
+    text-align: center;
+    background-color: #fbffb1;
 }
 
 .login {
@@ -75,7 +63,6 @@ table {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
 }
 
 .card h2 {
@@ -87,39 +74,4 @@ table {
 .card a h4 {
     font-size: 25px;
     color: wheat;
-}
-
-.highlight {
-    background-color: #010a43;
-    color: wheat;
-    margin: 20px 50px;
-    padding: 7px 30px;
-    text-align: center;
-    font-size: 25px;
-    border: none;
-}
-
-.main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.library,
-.intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.intro .cart {
-    grid-column: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.intro .welcome {
-    grid-column: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

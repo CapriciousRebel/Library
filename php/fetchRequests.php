@@ -2,18 +2,15 @@
 
 <?php include 'connection.php';
 
-$fetchNumberOfRequests = $_POST['fetchNumberOfRequests'];
-$query = "SELECT * FROM requests LIMIT $fetchNumberOfRequests;";
+$query = "SELECT * FROM requests;";
 $requests = pg_query($conn, $query);
 
 if ($requests) {
     echo '          <table>
-                    <t>
                     <th> No.</th>
                     <th> User Name </th>
                     <th> Book </th>
-                    <th> Quantity </th>
-                    </t>';
+                    <th> Quantity </th>';
 
     $id = 0;
     while ($row = pg_fetch_assoc($requests)) {

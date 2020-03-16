@@ -6,12 +6,10 @@ $mybooks = pg_query($conn, $query);
 
 
 if ($mybooks) {
-    echo '          <table>
-        <t>
-        <th> No. </th>
-        <th> Book Name </th>
-        <th> Quantity </th>
-        </t>';
+    echo '  <table>
+            <th> No. </th>
+            <th> Name </th>
+            <th> Quantity </th>';
 
     $id = 0;
     while ($row = pg_fetch_assoc($mybooks)) {

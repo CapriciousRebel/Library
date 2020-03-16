@@ -1,7 +1,7 @@
 function loadOnce() {
     // load everything once
     var numberOfRequests = 5;
-    $("#cart-items").load('../php/fetchCart.php', {
+    $("#cart-items").load('../php/fetchMyRequests.php', {
         fetchNumberOfRequests: numberOfRequests
     });
 
@@ -11,15 +11,6 @@ function loadOnce() {
 
     $("#mybooks").load('../php/showMyBooks.php', {
         fetchNumberOfMyBooks: 5
-    });
-
-}
-
-function updateCart() {
-
-    var numberOfRequests = 5;
-    $("#cart-items").load('../php/fetchCart.php', {
-        fetchNumberOfRequests: numberOfRequests
     });
 }
 
@@ -45,19 +36,4 @@ $(document).ready(function() {
         });
     });
 
-    // Add to cart
-    $("#makeRequestButton").on('click', function() {
-        var bookname = $("#bookname").val();
-        var quantity = $("#quantity").val();
-        $.ajax({
-            url: "../php/makeRequest.php",
-            type: "POST",
-            data: {
-                bookname: bookname,
-                quantity: quantity,
-            },
-        });
-
-        updateCart();
-    });
 });

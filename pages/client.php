@@ -5,46 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/clientStyles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="intro">
+    <div class="header">
         <div class="welcome">
             <h1>Welcome , Client!</h1>
         </div>
-        <div class="cart">
-            <h1>Cart</h1>
-            <div id="cart-items">
-
-            </div>
-            <input type="button" id="Checkout" name="Checkout" value="Checkout">
-
-        </div>
     </div>
+
     <div class="main">
         <div class="card">
-            <span class='highlight'>Books in Library</span>
+            <h1>Books in Library</h1>
             <div id="library">
 
             </div>
-            <button id="showMore">Show More books</button>
+            <button class="highlight" id="showMore">Show More books</button>
         </div>
 
         <div class="card">
-            <h4 class="highlight">My Books</h4>
+            <h1>My Books</h1>
             <div id="mybooks">
 
             </div>
-            <button id="showMybooks">Show More Books</button>
+            <button class="highlight" id="showMybooks">Show More Books</button>
         </div>
+
         <div class="card">
-            <form id="makeRequestForm" name="makeRequestForm" method="POST">
-                <input type="number" id="quantity" name="quantity" min="0" max="10">
-                <input type="text" id="bookname" name="bookname">
-                <input type="button" id="makeRequestButton" name="makeRequestButton" value="Request">
-            </form>
+            <h1>My requests</h1>
+            <div id="cart-items">
+
+            </div>
         </div>
         <script src="../js/clientSide.js"></script>
     </div>
