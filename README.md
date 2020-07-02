@@ -1,8 +1,17 @@
 # Library
 
-### A simple web-application, written in PHP, postgreSQL, HTML, CSS, JQuery. It uses AJAX to insert and retrieve data from the server.
+A simple web-application, written in PHP, postgreSQL, HTML, CSS, JQuery. 
 
-## To run it on your system :
+### Features
+
+- AJAX is used for communication with the server( Yes it was my first real world experience with ajax, hence it is a feature )
+- Admin can add books in the library
+- Student can send a request to borrow a book
+- Admin can aprrove or reject that request
+- Student can return a book, and request to update that status in the records
+
+
+### Setup:
 
 #### clone the repo and create "connection.php":
 ```
